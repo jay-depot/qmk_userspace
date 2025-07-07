@@ -20,14 +20,14 @@
 
 enum dilemma_keymap_layers {
     LAYER_BASE = 0,
-    LAYER_OSL,
     LAYER_NAVIGATION,
     LAYER_NUMERAL,
     LAYER_SYMBOLS,
     LAYER_POINTER,
     LAYER_FUNCTION,
-    LAYER_GAME
+    LAYER_GAME,
     // LAYER_MEDIA,
+    LAYER_OSL
 };
 
 // Mod Key defns:
@@ -39,12 +39,6 @@ enum dilemma_keymap_layers {
 #define OS_RCTL OSM(MOD_RCTL)
 #define OS_RGUI OSM(MOD_RGUI)
 #define OS_RSFT OSM(MOD_RSFT)
-
-// Automatically enable sniping-mode on the pointer layer.
-// #define DILEMMA_AUTO_SNIPING_ON_LAYER LAYER_POINTER
-
-#define DILEMMA_AUTO_POINTER_LAYER_TRIGGER_ENABLE
-#define DILEMMA_AUTO_POINTER_LAYER_TRIGGER_TIMEOUT_MS 1000
 
 // #define ESC_MED LT(LAYER_MEDIA, KC_ESC)
 // #define SPC_NAV LT(LAYER_NAVIGATION, KC_SPC)
@@ -88,19 +82,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * down and tailored for a stock experience that is meant to be fundation for
  * further personalization.
  */
-
-/**
- * \brief One-Shot layer.
- *
- * The layer to get to other layers, mostly.
- */
-  [LAYER_OSL] = LAYOUT_split_3x5_3(
-     KC_ESC, XXXXXXX,  XXXXXXX, TO_POINT, XXXXXXX,        KC_PSCR, XXXXXXX, XXXXXXX, XXXXXXX,  KC_INS,
-      TO_FN,  TO_SYM,   TO_NUM,  TO_BASE, TO_GAME,        KC_SCRL, OS_RSFT, OS_RALT, OS_RCTL,  KC_ENT,
-    XXXXXXX, XXXXXXX,  XXXXXXX,   TO_NAV, OS_LALT,        KC_PAUS, XXXXXXX, XXXXXXX, XXXXXXX, KC_QUOT,
-                       OS_LGUI, OS_LCTL, OS_LSFT,          KC_SPC, OS_RALT,  OS_OSL
-  ),
-
   /**
    * \brief Navigation layer.
    *
@@ -177,5 +158,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB, KC_A,    KC_S,    KC_D,    KC_F,            KC_G,    KC_H,   KC_J,    KC_K,    KC_L,
        XXXXXXX, KC_Z,    KC_X,    KC_C,    KC_V,            KC_B,    KC_N,   KC_M, KC_COMM,    KC_DOT,
                       OS_LGUI, OS_LCTL, OS_LSFT,          KC_SPC, OS_RALT,  OS_OSL
+  ),
+
+/**
+ * \brief One-Shot layer.
+ *
+ * The layer to get to other layers, mostly.
+ */
+  [LAYER_OSL] = LAYOUT_split_3x5_3(
+     KC_ESC, XXXXXXX,  XXXXXXX, TO_POINT, XXXXXXX,        KC_PSCR, XXXXXXX, XXXXXXX, XXXXXXX,  KC_INS,
+      TO_FN,  TO_SYM,   TO_NUM,  TO_BASE, TO_GAME,        KC_SCRL, OS_RSFT, OS_RALT, OS_RCTL,  KC_ENT,
+    XXXXXXX, XXXXXXX,  XXXXXXX,   TO_NAV, OS_LALT,        KC_PAUS, XXXXXXX, XXXXXXX, XXXXXXX, KC_QUOT,
+                       OS_LGUI, OS_LCTL,  OS_LSFT,         KC_SPC, OS_RALT,  OS_OSL
   ),
 };
