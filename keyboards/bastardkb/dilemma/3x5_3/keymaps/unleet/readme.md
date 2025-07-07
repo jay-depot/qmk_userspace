@@ -1,5 +1,7 @@
 # Dilemma `via` keymap
 
+TODO: Update this
+
 The Dilemma `via` keymap is based on a QWERTY layout with [home row mods](https://precondition.github.io/home-row-mods) and [Miryoku-inspired layers](https://github.com/manna-harbour/miryoku), and some features and changes specific to the Dilemma.
 
 This layout also supports VIA.
