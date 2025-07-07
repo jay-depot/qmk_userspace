@@ -1,7 +1,6 @@
 {
     "userspace_version": "1.0",
     "build_targets": [
-        ["bastardkb/dilemma/3x5_3", "vendor"],
-        ["bastardkb/dilemma/3x5_3", "unleet"]
+        ["bastardkb/dilemma/3x5_3", "jay-depot"]
     ]
 }
