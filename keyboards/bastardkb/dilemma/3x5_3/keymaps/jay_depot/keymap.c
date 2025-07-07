@@ -43,7 +43,7 @@ enum dilemma_keymap_layers {
 // #define ESC_MED LT(LAYER_MEDIA, KC_ESC)
 #define SPC_BASE LT(LAYER_BASE, KC_SPC)
 #define ENT_OSL LT(LAYER_OSL, KC_ENT)
-#define TAB_SYM LT(LAYER_SYMBOLS, KC_ENT)
+#define TAB_SYM LT(LAYER_SYMBOLS, KC_TAB)
 // #define BSP_NUM LT(LAYER_NUMERAL, KC_BSPC)
 // #define PT_Z LT(LAYER_POINTER, KC_Z)
 // #define PT_SLSH LT(LAYER_POINTER, KC_SLSH)
