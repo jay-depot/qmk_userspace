@@ -40,13 +40,10 @@ enum dilemma_keymap_layers {
 #define OS_RGUI OSM(MOD_RGUI)
 #define OS_RSFT OSM(MOD_RSFT)
 
-// #define ESC_MED LT(LAYER_MEDIA, KC_ESC)
 #define SPC_NUM LT(LAYER_NUMERAL , KC_SPC)
 #define ENT_OSL LT(LAYER_OSL, KC_ENT)
 #define TAB_SYM LT(LAYER_SYMBOLS, KC_TAB)
-// #define BSP_NUM LT(LAYER_NUMERAL, KC_BSPC)
-// #define PT_Z LT(LAYER_POINTER, KC_Z)
-// #define PT_SLSH LT(LAYER_POINTER, KC_SLSH)
+#define SHFT_NAV LT(LAYER_NUMERAL, KC_NO)
 
 #define TO_BASE  TO(LAYER_BASE)
 #define OS_OSL   OSL(LAYER_OSL)
@@ -90,7 +87,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
   [LAYER_NAVIGATION] = LAYOUT_split_3x5_3(
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,  KC_ENT,
+    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, KC_BSPC,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         KC_HOME, KC_PGDN, KC_PGUP,  KC_END, XXXXXXX,
                       OS_LGUI, OS_LCTL, OS_LSFT,        SPC_NUM, TAB_SYM, ENT_OSL
   ),
@@ -118,7 +115,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [LAYER_SYMBOLS] = LAYOUT_split_3x5_3(
     KC_LCBR, KC_AMPR, KC_ASTR, KC_LPRN, KC_RCBR,          KC_UNDS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    KC_COLN,  KC_DLR, KC_PERC, KC_CIRC, KC_PLUS,           KC_GRV, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    KC_COLN,  KC_DLR, KC_PERC, KC_CIRC, KC_PLUS,           KC_GRV, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSPC,
     KC_TILD, KC_EXLM,   KC_AT, KC_HASH, KC_PIPE,          KC_LPRN, XXXXXXX, XXXXXXX, KC_RALT, XXXXXXX,
                       OS_LGUI, OS_LCTL, OS_LSFT,         SPC_NUM, TAB_SYM, ENT_OSL
   ),
@@ -167,8 +164,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [LAYER_OSL] = LAYOUT_split_3x5_3(
      KC_ESC, XXXXXXX,  XXXXXXX, TO_POINT, XXXXXXX,        KC_PSCR, XXXXXXX, XXXXXXX, XXXXXXX,  KC_INS,
-      TO_FN,  TO_SYM,   TO_NUM,  TO_BASE, TO_GAME,        KC_SCRL, OS_RSFT, OS_RALT, OS_RCTL,  KC_ENT,
+      TO_FN,  TO_SYM,   TO_NUM,  TO_BASE, TO_GAME,        KC_SCRL, OS_RSFT, OS_RALT, OS_RCTL,  KC_DEL,
     KC_QUOT, XXXXXXX,  XXXXXXX,   TO_NAV, OS_LALT,        KC_PAUS, XXXXXXX, XXXXXXX, XXXXXXX, KC_QUOT,
                        OS_LALT, OS_LCTL,  OS_LSFT,       SPC_NUM, TAB_SYM, ENT_OSL
   ),
 };
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    switch (get_highest_layer(state)) {
+    case LAYER_NAVIGATION:
+        rgblight_setrgb (0x0A,  0x0A, 0x0A);
+        break;
+    case LAYER_NUMERAL:
+        rgblight_setrgb (0, 0, 127);
+        // LAYER_SYMBOLS,
+        // LAYER_POINTER,
+        // LAYER_FUNCTION,
+        // LAYER_GAME,
+        // LAYER_OSL
+        break;
+    default: //  LAYER_BASE
+        rgblight_setrgb (0x0A,  0x0A, 0x0A);
+        break;
+    }
+  return state;
+}
