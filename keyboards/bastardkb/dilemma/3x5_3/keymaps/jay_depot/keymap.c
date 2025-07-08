@@ -31,20 +31,19 @@ enum dilemma_keymap_layers {
 };
 
 // Mod Key defns:
-// #define OS_LALT OSM(MOD_LALT)
-// #define OS_LCTL OSM(MOD_LCTL)
-// #define OS_LGUI OSM(MOD_LGUI)
-// #define OS_LSFT OSM(MOD_LSFT)
-// #define OS_RALT OSM(MOD_RALT)
-// #define OS_RCTL OSM(MOD_RCTL)
-// #define OS_RGUI OSM(MOD_RGUI)
-// #define OS_RSFT OSM(MOD_RSFT)
+#define OS_LALT OSM(MOD_LALT)
+#define OS_LCTL OSM(MOD_LCTL)
+#define OS_LGUI OSM(MOD_LGUI)
+#define OS_LSFT OSM(MOD_LSFT)
+#define OS_RALT OSM(MOD_RALT)
+#define OS_RCTL OSM(MOD_RCTL)
+#define OS_RGUI OSM(MOD_RGUI)
+#define OS_RSFT OSM(MOD_RSFT)
 
 // #define ESC_MED LT(LAYER_MEDIA, KC_ESC)
 #define SPC_NUM LT(LAYER_NUMERAL , KC_SPC)
 #define ENT_OSL LT(LAYER_OSL, KC_ENT)
 #define TAB_SYM LT(LAYER_SYMBOLS, KC_TAB)
-#define NUM_NAV LT(LAYER_NAVIGATION, OS_LSFT)
 // #define BSP_NUM LT(LAYER_NUMERAL, KC_BSPC)
 // #define PT_Z LT(LAYER_POINTER, KC_Z)
 // #define PT_SLSH LT(LAYER_POINTER, KC_SLSH)
@@ -73,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,            KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
        KC_A,    KC_S,    KC_D,    KC_F,    KC_G,            KC_H,    KC_J,    KC_K,    KC_L, KC_BSPC,
        KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,            KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,
-                      OS_LGUI, OS_LCTL, NUM_NAV,        SPC_NUM, TAB_SYM, ENT_OSL
+                      OS_LGUI, OS_LCTL, OS_LSFT,        SPC_NUM, TAB_SYM, ENT_OSL
   ),
 
 /*
