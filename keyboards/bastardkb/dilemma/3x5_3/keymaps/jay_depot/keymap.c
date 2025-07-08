@@ -58,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,            KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
        KC_A,    KC_S,    KC_D,    KC_F,    KC_G,            KC_H,    KC_J,    KC_K,    KC_L, KC_BSPC,
        KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,            KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,
-                      OS_LGUI, OS_LCTL, OS_LSFT,        SPC_NUM, TAB_SYM, ENT_OSL
+                      OS_LCTL, OS_LGUI, OS_LSFT,         SPC_NUM, TAB_SYM, ENT_OSL
   ),
 
 /*
@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT, KC_BSPC,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         KC_HOME, KC_PGDN, KC_PGUP,  KC_END, XXXXXXX,
-                      OS_LGUI, OS_LCTL, OS_LSFT,        SPC_NUM, TAB_SYM, ENT_OSL
+                      _______, _______, _______,         _______, _______, _______
   ),
 
   /**
@@ -92,7 +92,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX,    KC_7,    KC_8,    KC_9, XXXXXXX,         KC_BSLS, KC_ASTR, KC_SLSH, KC_LPRN, KC_LBRC,
     XXXXXXX,    KC_4,    KC_5,    KC_6,    KC_0,         XXXXXXX, KC_PLUS, KC_MINS,  KC_EQL, KC_SCLN,
     XXXXXXX,    KC_1,    KC_2,    KC_3,  KC_DOT,         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LCBR,
-                      OS_LGUI, OS_LCTL, OS_LSFT,        SPC_NUM, TAB_SYM, ENT_OSL
+                      _______, _______, _______,        _______, _______, _______
   ),
 
 /**
@@ -106,7 +106,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_GRV, KC_AMPR, KC_CIRC, KC_ASTR, KC_UNDS,          KC_UNDS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     KC_COLN,  KC_DLR, KC_PERC, KC_LBRC, KC_LPRN,          KC_RPRN, KC_RBRC, XXXXXXX, XXXXXXX, KC_BSPC,
     KC_TILD, KC_EXLM,   KC_AT, KC_HASH, KC_PIPE,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                      OS_LGUI, OS_LCTL, OS_LSFT,          SPC_NUM, TAB_SYM, ENT_OSL
+                      _______, _______, OS_LSFT,          _______, _______, _______
   ),
 
 /** \brief Mouse emulation and pointer functions. */
@@ -114,7 +114,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     QK_BOOT,  EE_CLR, XXXXXXX, DPI_MOD, S_D_MOD,         S_D_MOD, DPI_MOD, XXXXXXX,  EE_CLR, QK_BOOT,
     XXXXXXX, XXXXXXX, KC_BTN3, KC_BTN2, KC_BTN1,         KC_BTN1, KC_BTN2, KC_BTN3, XXXXXXX, XXXXXXX,
     XXXXXXX, DRGSCRL, SNIPING, XXXXXXX, XXXXXXX,         XXXXXXX, XXXXXXX, SNIPING, DRGSCRL, _______,
-                      OS_LGUI, OS_LCTL, OS_LSFT,         TO_BASE, TAB_SYM, ENT_OSL
+                      _______, _______, _______,         _______, _______, _______
   ),
 
 /**
@@ -129,7 +129,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX,   KC_F7,   KC_F8,   KC_F9,  KC_F12,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX,   KC_F4,   KC_F5,   KC_F6,  KC_F11,
     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         XXXXXXX,   KC_F1,   KC_F2,   KC_F3,  KC_F10,
-                      OS_LGUI, OS_LCTL, OS_LSFT,        SPC_NUM, TAB_SYM, ENT_OSL
+                      _______, _______, _______,         _______, _______, _______
   ),
 
 /**
@@ -143,7 +143,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC, KC_Q,    KC_W,    KC_E,    KC_R,            KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,
         KC_TAB, KC_A,    KC_S,    KC_D,    KC_F,            KC_G,    KC_H,    KC_J,    KC_K,    KC_L,
        XXXXXXX, KC_Z,    KC_X,    KC_C,    KC_V,            KC_B,    KC_N,    KC_M, KC_COMM,    KC_DOT,
-                      OS_LGUI, OS_LCTL, OS_LSFT,        SPC_NUM, TAB_SYM, ENT_OSL
+                      _______, _______, _______,         _______, _______, _______
   ),
 
 /**
@@ -155,6 +155,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_ESC, XXXXXXX,  XXXXXXX, TO_POINT, XXXXXXX,        KC_PSCR, XXXXXXX, XXXXXXX, XXXXXXX,  KC_INS,
       TO_FN,  TO_SYM,   TO_NUM,  TO_BASE, TO_GAME,        KC_SCRL, OS_RSFT, OS_RALT, OS_RCTL,  KC_DEL,
     KC_QUOT, XXXXXXX,  XXXXXXX,   TO_NAV, OS_LALT,        KC_PAUS, XXXXXXX, XXXXXXX, XXXXXXX, KC_QUOT,
-                       OS_LALT, OS_LCTL,  OS_LSFT,       SPC_NUM, TAB_SYM, ENT_OSL
+                       OS_LALT, _______,  _______,        _______, _______, _______
   ),
 };
