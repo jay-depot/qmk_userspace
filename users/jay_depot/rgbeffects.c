@@ -65,7 +65,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
         for (uint8_t col = 0; col < MATRIX_COLS; ++col) {
             uint8_t index = g_led_config.matrix_co[row][col];
 
-            uint16_t keycode = keymap_key_to_keycode(layer, (keypos_t){col,row})
+            uint16_t keycode = keymap_key_to_keycode(layer, (keypos_t){col,row});
 
             if (index >= led_min && index < led_max && index != NO_LED &&
             keycode > KC_TRNS) {
