@@ -172,20 +172,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     switch (get_highest_layer(state)) {
-    case LAYER_NAVIGATION:
-        rgblight_sethsv (0,  0, 10);
-        break;
-    case LAYER_NUMERAL:
-        rgblight_sethsv (240, 255, 127);
-        // LAYER_SYMBOLS,
-        // LAYER_POINTER,
-        // LAYER_FUNCTION,
-        // LAYER_GAME,
-        // LAYER_OSL
-        break;
-    default: //  LAYER_BASE
-        rgblight_sethsv (0,  0, 10);
-        break;
+        case LAYER_NAVIGATION:
+            rgblight_sethsv (0,  0, 10);
+            break;
+        case LAYER_NUMERAL:
+        case LAYER_SYMBOL:
+            rgblight_sethsv (240, 255, 127);
+            break;
+            // LAYER_POINTER,
+            // LAYER_FUNCTION,
+            // LAYER_GAME,
+            // LAYER_OSL
+
+        default: //  LAYER_BASE
+            rgblight_sethsv (0,  0, 10);
+            break;
     }
 
     return state;
