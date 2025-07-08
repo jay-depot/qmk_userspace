@@ -176,8 +176,9 @@ layer_state_t layer_state_set_user(layer_state_t state) {
             rgblight_sethsv (0,  0, 10);
             break;
         case LAYER_NUMERAL:
+            rgblight_sethsv (240, 255, 64);
             break;
-        case LAYER_SYMBOLS:
+        case LAYER_SYMBOLS  :
             rgblight_sethsv (240, 255, 127);
             break;
             // LAYER_POINTER,
