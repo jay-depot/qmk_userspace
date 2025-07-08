@@ -1,32 +1,9 @@
 #include QMK_KEYBOARD_H
 #include "layers.h"
-
-layer_state_t layer_state_set_user(layer_state_t state) {
-    switch (get_highest_layer(state)) {
-        case LAYER_NAVIGATION:
-            rgblight_sethsv (0,  0, 10);
-            break;
-        case LAYER_NUMERAL:
-            rgblight_sethsv (240, 255, 64);
-            break;
-        case LAYER_SYMBOLS  :
-            rgblight_sethsv (240, 255, 127);
-            break;
-            // LAYER_POINTER,
-            // LAYER_FUNCTION,
-            // LAYER_GAME,
-            // LAYER_OSL
-
-        default: //  LAYER_BASE
-            rgblight_sethsv (0,  0, 10);
-            break;
-    }
-
-    return state;
-}
+#include "colors.h"
 
 layer_state_t default_layer_state_set_user(layer_state_t state) {
-    rgblight_sethsv (0,  0, 10);
+    rgblight_sethsv (HSV_COLOR_DEFAULT);
 
     return state;
 }
@@ -46,33 +23,36 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     if (layer > 0) {
         hsv_t hsv = rgb_matrix_get_hsv();
         switch (get_highest_layer(layer_state)) {
-            case 1:
-                hsv = (hsv_t){HSV_BLUE};
+            case LAYER_GAME:
+                hsv = (hsv_t){HSV_COLOR_GAME};
                 break;
-            case 2:
-                hsv = (hsv_t){HSV_AZURE};
+            case LAYER_NAVIGATION:
+                hsv = (hsv_t){HSV_COLOR_NAVIGATION};
                 break;
-            case 3:
-                hsv = (hsv_t){HSV_ORANGE};
+            case LAYER_NUMERAL:
+                hsv = (hsv_t){HSV_COLOR_NUMERAL};
                 break;
-            case 4:
-                hsv = (hsv_t){HSV_GREEN};
+            case LAYER_SYMBOLS:
+                hsv = (hsv_t){HSV_COLOR_SYMBOLS};
                 break;
-            case 5:
-                hsv = (hsv_t){HSV_TEAL};
+            case LAYER_POINTER:
+                hsv = (hsv_t){HSV_COLOR_POINTER};
                 break;
-            case 6:
-                hsv = (hsv_t){HSV_PURPLE};
+            case LAYER_FUNCTION:
+                hsv = (hsv_t){HSV_COLOR_FUNCTION};
                 break;
-            case 7:
+            case LAYER_OSL:
+                hsv = (hsv_t){HSV_COLOR_OSL};
+                break;
             default:
-                hsv = (hsv_t){HSV_RED};
+                hsv = (hsv_t){HSV_COLOR_DEFAULT};
                 break;
         };
 
-        if (hsv.v > rgb_matrix_get_val()) {
-            hsv.v = MIN(rgb_matrix_get_val() + 22, 255);
-        }
+        // if (hsv.v > rgb_matrix_get_val()) {
+        //     hsv.v = MIN(rgb_matrix_get_val() + 22, 255);
+        // }
+
         rgb_t rgb = hsv_to_rgb(hsv);
 
         for (uint8_t i = led_min; i < led_max; i++) {
