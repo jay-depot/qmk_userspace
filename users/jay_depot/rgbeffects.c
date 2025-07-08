@@ -67,13 +67,14 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
 
             uint16_t keycode = keymap_key_to_keycode(layer, (keypos_t){col,row});
 
-            if (index >= led_min && index < led_max && index != NO_LED &&
-            keycode > KC_TRNS) {
-                rgb_matrix_set_color(index, rgb.r, rgb.g, rgb.b);
-            } else if (keycode == KC_TRNS) {
-                rgb_matrix_set_color(index, HSV_COLOR_DEFAULT);
-            } else {
-                rgb_matrix_set_color(index, HSV_COLOR_DISABLED);
+            if (index >= led_min && index < led_max && index != NO_LED) {
+                if (keycode > KC_TRNS) {
+                    rgb_matrix_set_color(index, rgb.r, rgb.g, rgb.b);
+                } else if (keycode == KC_TRNS) {
+                    rgb_matrix_set_color(index, HSV_DIM);
+                } else {
+                    rgb_matrix_set_color(index, HSV_COLOR_DISABLED);
+                }
             }
         }
     }
