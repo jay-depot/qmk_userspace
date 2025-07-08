@@ -58,6 +58,9 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
         for (uint8_t i = led_min; i < led_max; i++) {
             if (HAS_FLAGS(g_led_config.flags[i], LED_FLAG_UNDERGLOW)) {
                 rgb_matrix_set_color(i, rgb.r, rgb.g, rgb.b);
+            } else if (index >= led_min && index < led_max && index != NO_LED &&
+            keymap_key_to_keycode(layer, (keypos_t){col,row}) > KC_TRNS) {
+                rgb_matrix_set_color(index, rgb);
             }
         }
     }
