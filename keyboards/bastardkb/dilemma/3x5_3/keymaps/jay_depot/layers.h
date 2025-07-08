@@ -1,0 +1,11 @@
+enum dilemma_keymap_layers {
+    LAYER_BASE = 0,
+    LAYER_NAVIGATION,
+    LAYER_NUMERAL,
+    LAYER_SYMBOLS,
+    LAYER_POINTER,
+    LAYER_FUNCTION,
+    LAYER_GAME,
+    // LAYER_MEDIA,
+    LAYER_OSL
+};

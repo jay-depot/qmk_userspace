@@ -17,18 +17,7 @@
  */
 
 #include QMK_KEYBOARD_H
-
-enum dilemma_keymap_layers {
-    LAYER_BASE = 0,
-    LAYER_NAVIGATION,
-    LAYER_NUMERAL,
-    LAYER_SYMBOLS,
-    LAYER_POINTER,
-    LAYER_FUNCTION,
-    LAYER_GAME,
-    // LAYER_MEDIA,
-    LAYER_OSL
-};
+#include "layers.h"
 
 // Mod Key defns:
 #define OS_LALT OSM(MOD_LALT)
@@ -169,33 +158,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                        OS_LALT, OS_LCTL,  OS_LSFT,       SPC_NUM, TAB_SYM, ENT_OSL
   ),
 };
-
-layer_state_t layer_state_set_user(layer_state_t state) {
-    switch (get_highest_layer(state)) {
-        case LAYER_NAVIGATION:
-            rgblight_sethsv (0,  0, 10);
-            break;
-        case LAYER_NUMERAL:
-            rgblight_sethsv (240, 255, 64);
-            break;
-        case LAYER_SYMBOLS  :
-            rgblight_sethsv (240, 255, 127);
-            break;
-            // LAYER_POINTER,
-            // LAYER_FUNCTION,
-            // LAYER_GAME,
-            // LAYER_OSL
-
-        default: //  LAYER_BASE
-            rgblight_sethsv (0,  0, 10);
-            break;
-    }
-
-    return state;
-}
-
-layer_state_t default_layer_state_set_user(layer_state_t state) {
-    rgblight_sethsv (0,  0, 10);
-
-    return state;
-}
