@@ -61,6 +61,9 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
         }
     }
 
+    rgb_t defaultColor = hsv_to_rgb((hsv_t){HSV_COLOR_DEFAULT});
+    rgb_t offColor = (hsv_t){HSV_COLOR_DISABLED};
+
     for (uint8_t row = 0; row < MATRIX_ROWS; ++row) {
         for (uint8_t col = 0; col < MATRIX_COLS; ++col) {
             uint8_t index = g_led_config.matrix_co[row][col];
@@ -71,9 +74,9 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                 if (keycode > KC_TRNS) {
                     rgb_matrix_set_color(index, rgb.r, rgb.g, rgb.b);
                 } else if (keycode == KC_TRNS) {
-                    rgb_matrix_set_color(index, HSV_DIM);
+                    rgb_matrix_set_color(index, defaultColor.r, defaultColor.g, defaultColor.b);
                 } else {
-                    rgb_matrix_set_color(index, HSV_COLOR_DISABLED);
+                    rgb_matrix_set_color(index, offColor.r, offColor.g, offColor.b);
                 }
             }
         }
