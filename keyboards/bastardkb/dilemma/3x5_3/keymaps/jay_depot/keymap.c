@@ -120,7 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_GRV, KC_AMPR, KC_CIRC, KC_ASTR, KC_UNDS,          KC_UNDS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
     KC_COLN,  KC_DLR, KC_PERC, KC_LBRC, KC_LPRN,          KC_RPRN, KC_RBRC, XXXXXXX, XXXXXXX, KC_BSPC,
     KC_TILD, KC_EXLM,   KC_AT, KC_HASH, KC_PIPE,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                      _______, _______, OS_LSFT,          _______, _______, _______
+                      _______, _______, _______,          _______, _______, _______
   ),
 
 /** \brief Mouse emulation and pointer functions. */
