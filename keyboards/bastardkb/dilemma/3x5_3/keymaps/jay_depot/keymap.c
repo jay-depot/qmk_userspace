@@ -153,8 +153,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [LAYER_OSL] = LAYOUT_split_3x5_3(
      KC_ESC, XXXXXXX,  XXXXXXX, TO_POINT, XXXXXXX,        KC_PSCR, XXXXXXX, XXXXXXX, XXXXXXX,  KC_INS,
-      TO_FN,  TO_SYM,   TO_NUM,  TO_BASE, TO_GAME,        KC_SCRL, OS_RSFT, OS_RALT, OS_RCTL,  KC_DEL,
-    KC_QUOT, XXXXXXX,  XXXXXXX,   TO_NAV, OS_LALT,        KC_PAUS, XXXXXXX, XXXXXXX, XXXXXXX, KC_QUOT,
+      TO_FN,  TO_SYM,   TO_NUM,  TO_BASE, TO_GAME,        KC_SCRL, XXXXXXX, XXXXXXX, XXXXXXX,  KC_DEL,
+    KC_QUOT, XXXXXXX,  XXXXXXX,   TO_NAV, OS_LALT,        KC_PAUS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                        OS_LALT, _______,  _______,        _______, _______, _______
   ),
 };
