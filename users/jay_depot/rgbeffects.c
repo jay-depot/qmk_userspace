@@ -62,7 +62,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     }
 
     rgb_t defaultColor = hsv_to_rgb((hsv_t){HSV_COLOR_DEFAULT});
-    rgb_t offColor = (hsv_t){HSV_COLOR_DISABLED};
+    rgb_t offColor = hsv_to_rgb((hsv_t){HSV_COLOR_DISABLED});
 
     for (uint8_t row = 0; row < MATRIX_ROWS; ++row) {
         for (uint8_t col = 0; col < MATRIX_COLS; ++col) {
