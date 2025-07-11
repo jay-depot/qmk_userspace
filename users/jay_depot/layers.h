@@ -1,5 +1,6 @@
 enum dilemma_keymap_layers {
     LAYER_BASE = 0,
+    LAYER_SKIP,
     LAYER_GAME,
     LAYER_NAVIGATION,
     LAYER_NUMERAL,
