@@ -24,8 +24,9 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     hsv_t hsv = (hsv_t){HSV_BLACK};
     switch (get_highest_layer(layer_state)) {
         case LAYER_GAMING:
-            hsv = (hsv_t){HSV_COLOR_GAME};
-            break;
+            return true;
+            // hsv = (hsv_t){HSV_COLOR_GAME};
+            // break;
         case LAYER_NAVIGATION:
             hsv = (hsv_t){HSV_COLOR_NAVIGATION};
             break;
