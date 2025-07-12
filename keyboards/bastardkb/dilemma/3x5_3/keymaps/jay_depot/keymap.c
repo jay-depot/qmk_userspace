@@ -41,7 +41,7 @@
 #define TO_SYM   TO(LAYER_SYMBOLS)
 #define TO_POINT TO(LAYER_POINTER)
 #define TO_FN    TO(LAYER_FUNCTION)
-#define TO_GAME  TO(LAYER_GAMING)
+#define TO_GLYR  TO(LAYER_GAMING)
 // #define TO_MED   TO(LAYER_MEDIA)
 
 #ifndef POINTING_DEVICE_ENABLE
@@ -152,7 +152,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * The layer to get to other layers, mostly.
  */
   [LAYER_OSL] = LAYOUT_split_3x5_3(
-     KC_ESC, XXXXXXX,  XXXXXXX, TO_POINT, TO_GAME,        KC_PSCR, XXXXXXX, XXXXXXX, XXXXXXX,  KC_INS,
+     KC_ESC, XXXXXXX,  XXXXXXX, TO_POINT, TO_GLYR,        KC_PSCR, XXXXXXX, XXXXXXX, XXXXXXX,  KC_INS,
       TO_FN,  TO_SYM,   TO_NUM,  TO_BASE, XXXXXXX,        KC_SCRL, XXXXXXX, XXXXXXX, XXXXXXX,  KC_DEL,
     KC_QUOT, XXXXXXX,  XXXXXXX,   TO_NAV, OS_LALT,        KC_PAUS, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                        OS_LALT, _______,  _______,        _______, _______, _______
